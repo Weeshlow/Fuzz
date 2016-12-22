@@ -18,6 +18,9 @@
         (string-replace* replaced from tos)
         replaced)))
 
+(define (get-http-code-from-response response)
+  (list-ref (string-split response) 1))
+
 (define (type? x)
   (cond
     [number? "number"]

@@ -8,5 +8,4 @@
      "/int/"
      (open-file-as-list set-file-path)))
 
-;Export all the functions
 (provide (all-defined-out))

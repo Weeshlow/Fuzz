@@ -1,0 +1,6 @@
+HTTP/1.1 302 Found
+Cache-Control: private
+Content-Type: text/html; charset=UTF-8
+Location: http://www.google.co.uk/?gfe_rd=cr&ei=rWNcWOL6KK3A8gexkoGoDA
+Content-Length: 261
+Date: Thu, 22 Dec 2016 23:37:17 GMT

@@ -17,6 +17,10 @@
               '(9999999999999999999999999999999)
               "Test we bring back a list of the lines of a file")
 
+;fixture file please...
+(check-equal? (get-http-code-from-response (open-file "fixtures/headers/headers-1"))
+              "302")
+
 ;Need a real test for this but my knowledge of rackunit is limited
 ;Basically, we want to test whether the replacements that are occurring are in the given array.
 (display (string-replace* "hello hello hello hello is that okay?" "hello" '("these" "are" "some" "replacement" "words")))
