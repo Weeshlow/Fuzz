@@ -1,10 +1,12 @@
 #lang racket
 
+(require "utils.rkt")
+
 (define (replace url set-file-path)
-  "not implemented")
+  (string-replace*
+     url
+     "{{INT}}"
+     (open-file-as-list set-file-path)))
 
 ;Export all the functions
 (provide (all-defined-out))
-
-(file->string (string->path "../tests/fixtures/numbers"))
-
