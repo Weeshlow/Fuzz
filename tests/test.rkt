@@ -5,7 +5,7 @@
 (require "../src/utils.rkt")
 
 
-(check-equal? (replace "http://www.service.some.url?person={{INT}}" "fixtures/numbers")  
+(check-equal? (replace "http://www.service.some.url?person=/int/" "fixtures/numbers")  
               "http://www.service.some.url?person=9999999999999999999999999999999" 
               "Test we replace all int tags with items from the integer set :(")
 

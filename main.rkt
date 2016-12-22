@@ -1,11 +1,16 @@
 #lang racket
 
-; Have a config file for all the curl headers etc...
+(require "src/replace.rkt")
+(require "src/utils.rkt")
 
-(define (replace-tag tag replacement-list) "Not implemented")
+;Note you can only run this from the command line otherwise it dies.
+;To do so, `racket main.rkt a-url-here`
+;I know what the dying issue is, I just haven't fixed it...
 
-(define int-tag "{{INT}}")
-(define string-tag "{{STRING}}")
+(define url (string-replace*
+              (vector-ref (current-command-line-arguments) 0)
+               "/int/"
+               (open-file-as-list "sets/numbers")))
 
-
-
+(define curl-call  (format "curl --url ~a" url))
+(system curl-call)

@@ -5,7 +5,7 @@
 (define (replace url set-file-path)
   (string-replace*
      url
-     "{{INT}}"
+     "/int/"
      (open-file-as-list set-file-path)))
 
 ;Export all the functions
