@@ -1,5 +1,7 @@
 #lang racket
 
+(require racket/string)
+
 (define (random-choice ls)
   (list-ref ls (random (length ls))))
 

@@ -7,9 +7,12 @@
 ;To do so, `racket main.rkt a-url-here`
 ;I know what the dying issue is, I just haven't fixed it...
 
-(define url (replace
-              (vector-ref (current-command-line-arguments) 0)
-              "sets/numbers"))
-
-(define curl-call  (format "curl --url ~a" url))
-(system curl-call)
+(define (call)
+  (let*
+    ([url (replace
+          (vector-ref (current-command-line-arguments) 0)
+          "sets/numbers")]
+     [curl-call (format "curl --url ~a" url)])
+    (system curl-call)))
+  
+(call)
