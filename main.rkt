@@ -12,7 +12,7 @@
     ([url (replace
           (vector-ref (current-command-line-arguments) 0)
           "sets/numbers")]
-     [curl-call (format "curl --url ~a" url)])
+     [curl-call (format "curl --url ~a -K 'curl.conf'" url)])
     (system curl-call)))
   
 (call)
