@@ -11,9 +11,32 @@
 
       (test-case
         "Test we replace all int tags with items from the integer fixture file"
-        (check-equal? (replace "http://www.service.some.url?person=/int/" "fixtures/numbers")  
-                     "http://www.service.some.url?person=9999999999999999999999999999999"))
-      
+        (check-equal?
+          (replace "http://www.service.some.url?person=/int/" "fixtures/numbers")  
+            "http://www.service.some.url?person=9999999999999999999999999999999"))
+
+      (test-case
+        "Test we replace all string tags with items from the string fixture file"
+        (check-equal?
+          (replace "http://www.service.some.url?name=/string/" "fixtures/strings")  
+            "http://www.service.some.url?name=johndoe"))
+
+      (test-case
+         "Test we replace multiple instances of a tag"
+         (check-equal?
+           (replace
+             "http://www.service.some.url?name=/string/&othername=/string/"
+             "fixtures/strings")  
+           "http://www.service.some.url?name=johndoe&othername=johndoe"))
+
+      ;(test-case
+      ;   "Test we replace instances of different tags"
+      ;   (check-equal?
+      ;     (replace
+      ;       "http://www.service.some.url?name=/string/&age=/int/"
+      ;       "fixtures/strings")
+      ;     "http://www.service.some.url?name=johndoe&age=99"))
+
       (test-case
         "Test we return the contents of a file as a string"
         (check-equal? (open-file "fixtures/numbers") "9999999999999999999999999999999\n"))
