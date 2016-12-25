@@ -2,3 +2,4 @@
 *.swo
 src/compiled/*
 *.rkt~
+ideas.md
