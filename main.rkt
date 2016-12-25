@@ -1,3 +1,5 @@
+#! /usr/bin/env racket
+
 #lang racket
 
 (require "src/replace.rkt")
@@ -13,6 +15,9 @@
           (vector-ref (current-command-line-arguments) 0)
           "sets/numbers")]
      [curl-call (format "curl --url ~a -K 'curl.conf'" url)])
+    (displayln "===================")
+    (displayln url)
     (system curl-call)))
-  
-(call)
+
+(for ([i 10]) (call))
+
