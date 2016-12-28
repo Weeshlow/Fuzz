@@ -14,10 +14,14 @@
     ([url (replace
           (vector-ref (current-command-line-arguments) 0)
           "sets/numbers")]
-     [curl-call (format "curl --url ~a -K 'curl.conf'" url)])
+     [curl-call (format "curl --config 'curl.conf' --url '~a'" url)])
+    (displayln "===================")
+    (displayln curl-call)
     (displayln "===================")
     (displayln url)
+    (displayln "===================")
+    (displayln curl-call)
     (system curl-call)))
 
-(for ([i 10]) (call))
+(for ([i 1]) (call))
 
