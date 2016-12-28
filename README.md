@@ -34,3 +34,12 @@ The config file supplied (curl.conf) is a standard curl configuration file.
 In here, you'll need to add your own headers and whatever else in order to authenticate with your service (assuming it needs authentication).
 
 For more information `man curl` and look for the `--config` or `-K` option.
+
+## Resources
+
+If you don't have a service to try out but just want to try fuzz then the pokemon api is a good choice.
+
+Clone fuzz and run
+
+`racket main.rkt http://pokeapi.co/api/v2/pokemon//int//`
+
