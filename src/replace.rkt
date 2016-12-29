@@ -3,8 +3,8 @@
 (require "utils.rkt")
 
 (define (replace url [set-file-path "sets/any"] )
-  (let ([replaced-url ""])
-    (set! replaced-url (replace-any url set-file-path))
+  (let ([replaced-url url])
+    (set! replaced-url (replace-any replaced-url set-file-path))
     (set! replaced-url (replace-strings replaced-url set-file-path))    
     (set! replaced-url (replace-ints replaced-url set-file-path))
     replaced-url))
