@@ -29,6 +29,12 @@
              "fixtures/strings")  
            "http://www.service.some.url?name=johndoe&othername=johndoe"))
 
+      (test-case
+         "Test we don't evaluate numbers when we replace them"
+         (check-equal?
+           (open-file-as-list "fixtures/number-evaluation") 
+           '("1/0" "0/0")))
+
       ;(test-case
       ;   "Test we replace instances of different tags"
       ;   (check-equal?
@@ -43,7 +49,7 @@
 
       (test-case
         "Test we bring back the contents of a file as a list separated on new lines"
-        (check-equal? (open-file-as-list "fixtures/numbers") '(9999999999999999999999999999999)))
+        (check-equal? (open-file-as-list "fixtures/numbers") '("9999999999999999999999999999999")))
 
       (test-case
         "Test we replace a string with random elements from an array"

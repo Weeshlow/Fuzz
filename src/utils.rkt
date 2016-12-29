@@ -8,8 +8,11 @@
 (define (open-file path-as-string)
   (file->string (string->path path-as-string)))
 
+;(define (open-file-as-list path-as-string)
+;  (file->list (string->path path-as-string)))
+
 (define (open-file-as-list path-as-string)
-  (file->list (string->path path-as-string)))
+  (string-split (file->string (string->path path-as-string)) "\n"))
 
 ;like string replace but it can use a different 'to' each time. i.e. random choices
 ;(string-replace* "boo boo boo" "boo" '("bl" "po" "to")) => "po bl po"
