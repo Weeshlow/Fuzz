@@ -4,6 +4,17 @@
 
 An endpoint fuzzer to help discover validation errors
 
+## Requirements
+
+You'll need racket 6.x for this to work,
+the easiest way, is to add the up-to-date racket ppa and install it from there.
+
+```
+sudo add-apt-repository ppa:plt/racket
+sudo apt-get update
+sudo apt-get install racket
+```
+
 ## Sample call
 
 `fuzz http://myendpoint.com?person=/string/&age=/int/`
@@ -34,6 +45,14 @@ The config file supplied (curl.conf) is a standard curl configuration file.
 In here, you'll need to add your own headers and whatever else in order to authenticate with your service (assuming it needs authentication).
 
 For more information `man curl` and look for the `--config` or `-K` option.
+
+## Tests
+
+To run the tests
+```
+cd tests
+racket test.rkt
+```
 
 ## Resources
 
