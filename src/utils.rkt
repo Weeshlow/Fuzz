@@ -8,9 +8,6 @@
 (define (open-file path-as-string)
   (file->string (string->path path-as-string)))
 
-;(define (open-file-as-list path-as-string)
-;  (file->list (string->path path-as-string)))
-
 (define (open-file-as-list path-as-string)
   (string-split (file->string (string->path path-as-string)) "\n"))
 
